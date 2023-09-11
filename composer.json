@@ -1,0 +1,12 @@
+{
+    "name": "root/html",
+    "autoload": {
+        "psr-4": {
+            "Root\\Html\\": "src/"
+        }
+    },
+    "require": {
+        "larapack/dd": "^1.1",
+        "ext-json": "*"
+    }
+}
