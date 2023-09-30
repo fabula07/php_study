@@ -1,15 +1,19 @@
 <?php
 require PARTS_DIR . 'header.php';
+extract(formSessionData(SESSION_KEYS::LOGIN));
 ?>
     <section id="register" class="section-gap">
         <div class="container">
             <div class="row">
                 <main class="w-25 m-auto mt-5 pt-5">
                     <form action="/" method="POST">
+                        <?= formError($error ?? null) ?>
                         <input type="hidden" name="type" value="login" />
                         <h1 class="h3 mb-3 fw-normal">Sign In</h1>
                         <div class="form-floating mt-2">
-                            <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
+                            <input type="email" class="form-control" id="floatingInput" name="email"
+                                   value="<?= $fields['email'] ?? '' ?>"
+                                   placeholder="name@example.com">
                             <label for="floatingInput">Email address</label>
                         </div>
                         <div class="form-floating mt-2">

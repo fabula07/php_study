@@ -1,7 +1,7 @@
 <?php
 
 
-function dbSelect(TABLES $table,string $columns ='*',string $condition = null, string $order = null, bool $isSingle = false) : array
+function dbSelect(Tables $table,string $columns ='*',string $condition = null, string $order = null, bool $isSingle = false) : array
 {
  $sql = "SELECT {$columns} FROM  {$table->value}";
  $sql .= $condition ? " WHERE {$condition}" : "";
@@ -12,7 +12,7 @@ function dbSelect(TABLES $table,string $columns ='*',string $condition = null, s
 
  $result = $isSingle ?$query->fetch() : $query -> fetchAll();
 
- return $result ?? [];
-
+ return $result ?: [];
 
 }
+
